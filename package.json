@@ -1,0 +1,65 @@
+{
+  	"name": "luajit-scripts",
+	"displayName": "LuaJIT Scripts",
+	"description": "LuaJIT Scripts UI for Triangle Union",
+	"version": "0.0.1",
+
+	"repository": "https://github.com/qurs/vscode-luajit-scripts.git",
+
+	"engines": {
+		"vscode": "^1.67.0"
+	},
+	"categories": [
+		"Programming Languages"
+	],
+	"activationEvents": [
+		"onCommand:luajit-scripts.refreshScripts",
+		"onStartupFinished"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "luajit-scripts.refreshScripts",
+				"title": "Refresh scripts"
+			},
+
+			{
+				"command": "luajit-scripts.runScript",
+				"title": "Run",
+				"icon": "$(debug-continue)"
+			}
+		],
+
+		"views": {
+			"explorer": [
+				{
+					"id": "luajit-scripts",
+					"name": "LuaJIT Scripts"
+				}
+			]
+		},
+
+		"menus": {
+			"view/item/context": [
+				{
+					"command": "luajit-scripts.runScript",
+					"group": "inline"
+				}
+			]
+		}
+	},
+	"devDependencies": {
+		"@types/vscode": "^1.67.0",
+		"@types/glob": "^7.2.0",
+		"@types/mocha": "^9.1.1",
+		"@types/node": "14.x",
+		"@typescript-eslint/eslint-plugin": "^5.21.0",
+		"@typescript-eslint/parser": "^5.21.0",
+		"eslint": "^8.14.0",
+		"glob": "^8.0.1",
+		"mocha": "^9.2.2",
+		"typescript": "^4.6.4",
+		"@vscode/test-electron": "^2.1.3"
+	}
+}
