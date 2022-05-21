@@ -2,7 +2,7 @@
   	"name": "luajit-scripts",
 	"displayName": "LuaJIT Scripts",
 	"description": "LuaJIT Scripts UI for Triangle Union",
-	"version": "1.0.0",
+	"version": "1.0.1",
 
 	"publisher": "qurs",
 	"repository": "https://github.com/qurs/vscode-luajit-scripts.git",
@@ -20,6 +20,14 @@
 		"onStartupFinished"
 	],
 	"main": "./out/extension.js",
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"pretest": "npm run compile && npm run lint",
+		"lint": "eslint src --ext ts",
+		"test": "node ./out/test/runTest.js"
+	},
 	"contributes": {
 		"commands": [
 			{

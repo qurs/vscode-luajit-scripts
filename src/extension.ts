@@ -156,7 +156,7 @@ export function activate(context: vscode.ExtensionContext) {
 	context.subscriptions.push(disposable);
 
 	disposable = vscode.commands.registerCommand('luajit-scripts.runScript', (node: Dependency, context: vscode.ExtensionContext) => {
-		vscode.window.activeTerminal?.sendText('luajit "' + path.join(node.ljPath, node.script) + '"' + ' ' + node.args );
+		vscode.window.activeTerminal?.sendText('luajit -e "_PATH = [['+ node.ljPath +']]; package.path = string.gsub([[!PATH!\\?.lua;!PATH!\\?.luac;!PATH!\\?.dll;!PATH!\\..\\lua_modules\\?.lua;!PATH!\\..\\lua_modules\\?.luac;!PATH!\\..\\lua_modules\\?.dll]], \'!PATH!\', _PATH)" "' + path.join(node.ljPath, node.script) + '"' + ' ' + node.args );
 	});
 	context.subscriptions.push(disposable);
 
