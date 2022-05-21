@@ -2,7 +2,7 @@
   	"name": "luajit-scripts",
 	"displayName": "LuaJIT Scripts",
 	"description": "LuaJIT Scripts UI for Triangle Union",
-	"version": "0.0.1",
+	"version": "1.0.0",
 
 	"publisher": "qurs",
 	"repository": "https://github.com/qurs/vscode-luajit-scripts.git",
