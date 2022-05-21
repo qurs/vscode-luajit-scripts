@@ -4,6 +4,7 @@
 	"description": "LuaJIT Scripts UI for Triangle Union",
 	"version": "0.0.1",
 
+	"publisher": "qurs",
 	"repository": "https://github.com/qurs/vscode-luajit-scripts.git",
 
 	"engines": {
